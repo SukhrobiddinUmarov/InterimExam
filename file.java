@@ -8,11 +8,14 @@ public class file {
         String inputData = input.nextLine();
         String[] array = inputData.split(", ");
         Random random = new Random();
-        int randomNumber = random.nextInt(4);
-        if (randomNumber > array.length) {
-            randomNumber = random.nextInt(array.length+1); 
+        int randomNumber;
+        if (array.length < 3) {
+            randomNumber = random.nextInt(array.length+1);
         }
-        String[] newArray = Arrays.copyOf(array, randomNumber);
+        else {
+            randomNumber = random.nextInt(4);
+        }
+            String[] newArray = Arrays.copyOf(array, randomNumber);
         
         System.out.println("Элементы массива: ");
         System.out.println(Arrays.toString(newArray));    
